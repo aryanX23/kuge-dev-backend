@@ -1,7 +1,6 @@
 const express=require("express");
 const bodyParser=require("body-parser");
 const mongoose=require('mongoose');
-const {encrypt,decrypt}= require('./crypto');
 const cors=require('cors');
 const registerUser= require('./registerSchema');
 //const session=require('express-session');
@@ -19,6 +18,7 @@ app.use(cors({
 app.use(bodyParser.json());
 /* END OF MIDDLEWARE */
 app.post('/register',(req,res)=>{
+    console.log("/register");
     const {name,email,regNo}=req.body;
     const user=new registerUser({
         user_name:name,
