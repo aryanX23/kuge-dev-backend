@@ -17,6 +17,9 @@ app.use(cors({
 }));
 app.use(bodyParser.json());
 /* END OF MIDDLEWARE */
+app.get('/',(req,res)=>{
+    res.send("It is working!");
+});
 app.post('/register',(req,res)=>{
     console.log("/register");
     const {name,email,regNo}=req.body;
